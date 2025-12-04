@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo for TRIC-SAE</title>
+  <title>Demo for UniSAE</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
   <header>
-    <h1>TRIC-SAE: Triple-Control Speech Attribute Editing of Phoneme, Speaker, and Emotion</h1>
+    <h1>UniSAE: Speech Attribute Editing of Phoneme, Speaker, and Emotion</h1>
       <div class="header-links">
     <a href="about:blank" target="_blank">Paper(TBA)</a>
     <span>|</span>
@@ -26,10 +26,7 @@
       <h2>Abstract</h2>
       <div class="abstract">
         <p>
-          Speech carries rich linguistic and paralinguistic cues, and editing them enables applications in dubbing and voice personalization.
-While prior work typically modifies one attribute at a time, we introduce Speech Attribute Editing (SAE), a unified task for jointly editing multiple speech attributes.
-We propose TRIC-SAE, a diffusion-based framework that enables triple control over phoneme content, speaker identity and emotion. TRIC-SAE is trained on a large corpus spanning 87 speakers and 5 emotions.
-It leverages phonetic posteriorgrams (PPGs) for explicit content editing, and disentangles speaker and emotion representations using a contrastive cross-entropy (CCE) loss. Notably, the CCE loss achieves disentanglement without gradient reversal. Experimental results demonstrate that TRIC-SAE generates high-quality speech with precise and flexible control, outperforming baselines in both objective and subjective evaluations.
+          Speech attributes such as phoneme content, speaker identity, and emotion are inherently coupled via the source-filter mechanism, making independent control a formidable challenge. While cascaded approaches attempt to edit these factors sequentially, they fail to capture their non-linear interactions, often yielding incoherent or unnatural speech. In this work, we introduce Unified Speech Attribute Editing (UniSAE), a unified task for the simultaneous, effective control of these three fundamental dimensions. However, unified modeling faces two critical hurdles: the tendency of decoders to rely on entangled feature shortcuts, and the scarcity of parallel emotional corpora required to learn disentanglement. To address these, we introduce a Contrastive Cross-Entropy (CCE) loss that constructs a metric space enforcing robust ``soft disentanglement'' without the instability of adversarial training. Moreover, to resolve the data scarcity, we construct TRIC-Corpus (Triple-Control Corpus), a large-scale parallel corpus that provides the dense counterfactual supervision required to learn attribute disentanglement. Additionally, we leverage Phonetic Posteriorgrams (PPGs) to enable precise content editing. Experimental results demonstrate that UniSAE achieves superior triple-control capabilities with minimal cross-attribute leakage, significantly outperforming state-of-the-art baselines in both objective and subjective metrics.
         </p>
       </div>
     </section>
